@@ -6,68 +6,45 @@
 /*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 18:39:48 by tterribi          #+#    #+#             */
-/*   Updated: 2022/02/18 20:45:52 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/02/18 22:09:12 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-bool	num_validator(int num)
+bool	num_validator(long int num)
 {
 	if (num < INT_MIN || num > INT_MAX)
 		return (false);
 	return (true);
 }
 
-bool	is_in_strings(char c, char *str)
+int	stack_len_calc(char **matrix)
 {
-	while (*str)
-	{
-		if (*str == c)
-			return (true);
-		str++;
-	}
-	return (false);
-}
+	int	cont;
+	int	i;
 
-int	ft_atoi(const char *str)
-{
-	int	sign;
-	int	result;
-
-	while (is_in_strings(*(char *) str, "\t\n\v\f\r "))
-		str++;
-	sign = 1;
-	if (*str == '-')
-		sign *= -1;
-	if (*str == '-' || *str == '+')
-		str++;
-	result = 0;
-	while (*str >= '0' && *str <= '9')
-	{
-		if (result * 10 < 0)
-			return (-1);
-		result *= 10;
-		result += *str - '0';
-		str++;
-	}
-	return (result * sign);
+	i = 0;
+	cont = 0;
+	while (matrix[i])
+		cont = get_words(matrix[i], ' ');
+	return (cont);
 }
 
 int	string_manager(int *arr, int index, char *string)
 {
 	int	**matrix;
-	int	i;
 	int	j;
 
 	matrix = ft_split(string, ' ');
-	i = 0;
 	j = 0;
-	while (matrix[i])
+	while (matrix[j])
 	{
-		arr[i] = ft_atoi(matrix[i]);
-		i++;
+		arr[index] = ft_atoi(matrix[j]);
+		j++;
+		index++;
 	}
+	return (index);
 }
 
 int	*converter(char **argv)

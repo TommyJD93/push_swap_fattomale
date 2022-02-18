@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 18:48:26 by tterribi          #+#    #+#             */
-/*   Updated: 2022/02/18 18:48:54 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/02/18 22:02:04 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (str);
 }
 
-static size_t	get_word(const char *s, char c)
+static size_t	get_words(const char *s, char c)
 {
 	size_t	ret;
 
@@ -69,7 +69,7 @@ char	**ft_split(const char *s, char c)
 	if (!s)
 		return (0);
 	i = 0;
-	ret = malloc(sizeof(char *) * (get_word(s, c) + 1));
+	ret = malloc(sizeof(char *) * (get_words(s, c) + 1));
 	if (!ret)
 		return (0);
 	while (*s)
