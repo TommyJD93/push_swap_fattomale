@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 10:42:16 by tterribi          #+#    #+#             */
-/*   Updated: 2022/02/16 18:38:15 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/02/18 20:43:34 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <strings.h>
 # include <stdbool.h>
+# include <limits.h>
 /*
 typedef struct s_stack
 {
@@ -26,5 +28,8 @@ typedef struct s_stack
 	int				flag;
 }	t_stack;
 */
-int	length(int *arr);
+int		length(int *arr);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	**ft_split(const char *s, char c);
+int		ft_atoi(const char *str);
 #endif

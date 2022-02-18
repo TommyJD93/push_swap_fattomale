@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 18:16:13 by tterribi          #+#    #+#             */
-/*   Updated: 2022/02/16 18:40:00 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/02/18 12:26:29 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,3 @@ int	length(int *arr)
 		cont++;
 	return (cont);
 }
-
