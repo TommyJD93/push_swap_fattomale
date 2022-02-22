@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 11:27:29 by tterribi          #+#    #+#             */
-/*   Updated: 2022/02/22 15:07:32 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/02/22 17:34:04 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,40 +14,69 @@
 
 int	*rotate_a(int *stack_a)
 {
-	int	tmp;
+	int	*tmp;
+	int	len;
 	int	i;
-	int	*new_stack;
-	int	j;
 
-	tmp = stack_a[0];
-	new_stack = (int*)malloc(sizeof(int*) * length(stack_a));
-	if (!new_stack)
-		return (0);
-	write(1, "a\n", 2);
-	i = length(stack_a);
-	j = i - 1;
-	new_stack[i] = tmp;
-	while (stack_a[i] && new_stack[j])
+	len = length(stack_a);
+	tmp = (int*)malloc(sizeof(int*) * len);
+	i = 0;
+	while (i < len - 1)
 	{
-		new_stack[j] = stack_a[i];
-		i--;
-		j--;
+		tmp[i] = stack_a[i+1];
+		i++;
 	}
-	write(1, "b\n", 2);
-	return (new_stack);
+	tmp[len-1] = stack_a[0];
+	tmp[len] = '\0';
+	free(stack_a);
+	return(tmp);
 }
 
+int	*rotate_b(int *stack_b)
+{
+	int	*tmp;
+	int	len;
+	int	i;
+
+	len = length(stack_b);
+	tmp = (int*)malloc(sizeof(int*) * len);
+	i = 0;
+	while (i < len - 1)
+	{
+		tmp[i] = stack_b[i+1];
+		i++;
+	}
+	tmp[len-1] = stack_b[0];
+	tmp[len] = '\0';
+	free(stack_b);
+	return(tmp);
+}
+
+/*
 int main(void)
 {
-	int asd[5] =  {1,2,3,4};
+	int *asd;
 	int *asd1;
 	int i = 0;
 
-	asd1 = rotate_a(asd);
-	write(1, "c\n", 2);
+	asd = (int*)malloc(sizeof(int*) * 4);
+	while (i < 9)
+	{
+		asd[i] = i+1;
+		//printf("[%d]: %d\n", i, asd[i]);
+		i++;
+	}
+	asd[i] = '\0';
+	//write(1, "a\n", 2);
+	asd1 = rotate_b(asd);
+	//write(1, "c\n", 2);
+	i = 0;
+//	write(1, "b\n", 2);
 	while (asd1[i])
 	{
+		//write(1, "c\n", 2);
 		printf("[%d]: %d\n", i, asd1[i]);
 		i++;
 	}
 }
+*/
