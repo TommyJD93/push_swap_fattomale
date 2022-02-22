@@ -1,17 +1,5 @@
 /*
-sa : swap a - swap the first 2 elements at the top of stack a. Do nothing if there
-is only one or no elements).
-
-sb : swap b - swap the first 2 elements at the top of stack b. Do nothing if there
-is only one or no elements).
-
 ss : sa and sb at the same time.
-
-pa : push a - take the first element at the top of b and put it at the top of a. Do
-nothing if b is empty.
-
-pb : push b - take the first element at the top of a and put it at the top of b. Do
-nothing if a is empty.
 
 ra : rotate a - shift up all elements of stack a by 1. The first element becomes
 the last one.
@@ -50,12 +38,50 @@ void	swap_b(int *stack_b)
 	stack_b[1] = temp;
 }
 
-void	push_a(int *stack_a, int *stack_b)
+int	*push_a(int *stack_a, int *stack_b)
 {
 	int	len;
 	int	*new_stack;
+	int	i;
+	int	j;
 
-	len = length(stack_a);
-	new_stack = ft_calloc(sizeof(int), len + 1);
-	
+	len = length(stack_a) + 1;
+	new_stack = (int*)malloc(sizeof(int) * len);
+	if (!new_stack)
+		return (0);
+	new_stack[0] = stack_b[0];
+	i = 1;
+	j = 0;
+	while (new_stack[i])
+	{
+		new_stack[i] = stack_a[j];
+		i++;
+		j++;
+	}
+	free(stack_a);
+	return (new_stack);
+}
+
+int	*push_b(int *stack_a, int *stack_b)
+{
+	int	len;
+	int	*new_stack;
+	int	i;
+	int	j;
+
+	len = length(stack_b) + 1;
+	new_stack = (int*)malloc(sizeof(int) * len);
+	if (!new_stack)
+		return (0);
+	new_stack[0] = stack_a[0];
+	i = 1;
+	j = 0;
+	while (new_stack[i])
+	{
+		new_stack[i] = stack_b[j];
+		i++;
+		j++;
+	}
+	free(stack_b);
+	return (new_stack);
 }
