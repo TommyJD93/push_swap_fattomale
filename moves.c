@@ -31,3 +31,31 @@ rrr : rra and rrb at the same time.
 */
 
 #include "push_swap.h"
+
+void	swap_a(int *stack_a)
+{
+	int	temp;
+
+	temp = stack_a[0];
+	stack_a[0] = stack_a[1];
+	stack_a[1] = temp;
+}
+
+void	swap_b(int *stack_b)
+{
+	int	temp;
+
+	temp = stack_b[0];
+	stack_b[0] = stack_b[1];
+	stack_b[1] = temp;
+}
+
+void	push_a(int *stack_a, int *stack_b)
+{
+	int	len;
+	int	*new_stack;
+
+	len = length(stack_a);
+	new_stack = ft_calloc(sizeof(int), len + 1);
+	
+}

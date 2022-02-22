@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 10:42:16 by tterribi          #+#    #+#             */
-/*   Updated: 2022/02/18 22:03:22 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/02/22 09:07:05 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <strings.h>
 # include <stdbool.h>
 # include <limits.h>
-/*
+
 typedef struct s_stack
 {
 	int				content;
@@ -27,10 +27,11 @@ typedef struct s_stack
 	int				both;
 	int				flag;
 }	t_stack;
-*/
+
 int				length(int *arr);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			**ft_split(const char *s, char c);
 int				ft_atoi(const char *str);
 static size_t	get_words(const char *s, char c);
+void			*ft_calloc(size_t nmemb, size_t size);
 #endif
