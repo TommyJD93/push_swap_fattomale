@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 18:39:48 by tterribi          #+#    #+#             */
-/*   Updated: 2022/02/24 08:17:30 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/02/24 18:38:02 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ int	stack_len_calc(char **matrix)
 
 int	string_manager(int *arr, int index, char *string)
 {
-	int	**matrix;
-	int	j;
+	int		**matrix;
+	int		j;
 
 	matrix = ft_split(string, ' ');
 	j = 0;
@@ -51,24 +51,34 @@ int	*converter(char **argv)
 {
 	int	*arr;
 	int	i;
-	int	j;
+	int	mlen;
 
-	if (!argv)
-		return (NULL);
-	i = 0;
-	while (*argv[i])
+	mlen = stack_len_calc(argv);
+	arr = (int *)malloc(sizeof(int *) * mlen);
+	if (!arr)
+		return (0);
+	while (i < mlen)
 	{
-		if (is_in_strings(' ', *argv[i]))
-			j = string_manager(arr, j, *argv[i]);
+		if (is_in_strings(' ', argv[i]))
+			i += string_manager(arr, i, argv[i]);
 		else
 		{
-			arr[i] = ft_atoi(*argv[i]);
-			if (num_validator(arr[i]))
-			{
-				printf("num of index %d isn't valid", i);
-				return (0);
-			}
+			arr[i] = ft_atoi(argv[i]);
+			i++;
 		}
+	}
+	return (arr);
+}
+
+int	main(int argc, char **argv)
+{
+	int	*diocane;
+	int i = 0;
+
+	diocane = converter(argv);
+	while (diocane[i])
+	{
+		printf("[%d]: %d", i, diocane[i]);
 		i++;
 	}
 }

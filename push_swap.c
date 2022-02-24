@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 10:48:02 by tterribi          #+#    #+#             */
-/*   Updated: 2022/02/18 17:53:51 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/02/24 11:40:26 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	i = 0;
-	converted = converter();
+	converted = converter(argv);
 	int	suca[5] = {1, 2, 3, 4};
 	len = length(suca);
 	stack_a = (int *)malloc(sizeof(int) * len);

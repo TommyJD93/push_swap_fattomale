@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 11:27:29 by tterribi          #+#    #+#             */
-/*   Updated: 2022/02/24 08:16:33 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/02/24 11:39:26 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,20 +63,20 @@ int	*reverse_rotate_a(int *stack_a)
 	i = 0;
 	while (i < len - 1)
 	{
-		tmp[i+1] = stack_a[i];
+		tmp[i + 1] = stack_a[i];
 		i++;
 	}
-	tmp[0] = stack_a[len-1];
+	tmp[0] = stack_a[len - 1];
 	tmp[len] = '\0';
 	free(stack_a);
 	return (tmp);
 }
 
-int *reverse_rotate_b(int *stack_b)
+int	*reverse_rotate_b(int *stack_b)
 {
-	int *tmp;
-	int len;
-	int i;
+	int	*tmp;
+	int	len;
+	int	i;
 
 	len = length(stack_b);
 	tmp = (int *)malloc(sizeof(int *) * len);
@@ -91,6 +91,7 @@ int *reverse_rotate_b(int *stack_b)
 	free(stack_b);
 	return (tmp);
 }
+
 /*
 int main(void)
 {

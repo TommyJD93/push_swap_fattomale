@@ -46,7 +46,7 @@ int	*push_a(int *stack_a, int *stack_b)
 	int	j;
 
 	len = length(stack_a) + 1;
-	new_stack = (int*)malloc(sizeof(int) * len);
+	new_stack = (int *)malloc(sizeof(int *) * len);
 	if (!new_stack)
 		return (0);
 	new_stack[0] = stack_b[0];

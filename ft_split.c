@@ -6,11 +6,42 @@
 /*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 18:48:26 by tterribi          #+#    #+#             */
-/*   Updated: 2022/02/18 22:02:04 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/02/24 11:43:34 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	ft_strlen(const char *str)
+{
+	int	count;
+
+	count = 0;
+	while (str[count])
+		count++;
+	return (count);
+}
+
+char	*ft_strdup(const char *src)
+{
+	char	*ptr;
+	int		i;
+
+	i = 0;
+	while (src[i])
+		i++;
+	ptr = malloc(sizeof(char) * (i + 1));
+	if (!ptr)
+		return (NULL);
+	i = 0;
+	while (src[i])
+	{
+		ptr[i] = src[i];
+		i++;
+	}
+	ptr[i] = '\0';
+	return (ptr);
+}
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
