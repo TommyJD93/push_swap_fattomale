@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 18:39:48 by tterribi          #+#    #+#             */
-/*   Updated: 2022/02/28 16:10:31 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/02/28 18:43:46 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ bool	num_validator(long int num)
 
 int	stack_len_calc(char **matrix)
 {
-	int	cont;
+	int	*cont;
 	int	i;
 
 	i = 0;
@@ -50,19 +50,26 @@ int	string_manager(int *arr, int index, char *string)
 	return (index);
 }
 
-int	*converter(char **argv)
+int	*converter(char **argv, int *stack_len)
 {
 	int	*arr;
 	int	i;
-	int	mlen;
+	int mlen;
 
-	mlen = stack_len_calc(argv);
-	printf("mlen: %d\n", mlen);
+	write(1, "a\n", 2);
+
+	stack_len = stack_len_calc(argv);
+
+//	printf("%d", *stack_len);
+
+	write(1, "b\n", 2);
+
+
+
 	arr = (int *)malloc(sizeof(int *) * mlen);
 	if (!arr)
 		return (0);
 	printf("check len 1: %d\n", length(arr));
-//	write(1, "c\n", 2);
 	i = 0;
 	while (i < mlen)
 	{
@@ -84,7 +91,7 @@ int	*converter(char **argv)
 	i = 0;
 	printf("-----------------\n");
 	printf("test: %d\n", arr[0]);
-	while (i < length(arr))
+	while (i < *stack_len)
 	{
 		//write(1, "a\n", 2);
 		printf("[%d]: %d\n", i, arr[i]);
@@ -98,10 +105,13 @@ int	main(int argc, char **argv)
 {
 	int	*porcamadonna;
 	int	i = 0;
+	int *len;
 
-	//write(1, "a\n", 2);
+	len = (int*)malloc(sizeof(int*) * 1);
+	len[1] = '\0';
+	write(1, "a\n", 2);
 	//diocane = (int*)malloc(sizeof(int*));
-	porcamadonna = converter(argv);
+	porcamadonna = converter(argv, len);
 //	write(1, "a\n", 2);
 	//printf("%d\n", diocane[0]);
 	// while (porcamadonna[i])
@@ -109,5 +119,6 @@ int	main(int argc, char **argv)
 	// 	printf("[%d]: %d\n", i, porcamadonna[i]);
 	// 	i++;
 	// }
+	printf("main len: %d", *len);
 	printf("f\n");
 }

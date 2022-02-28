@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 10:42:16 by tterribi          #+#    #+#             */
-/*   Updated: 2022/02/28 11:36:57 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/02/28 18:29:37 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ char			*ft_substr(char const *s, unsigned int start, size_t len);
 int				ft_atoi(const char *str);
 bool			is_in_strings(char c, char *str);
 
-int				*converter(char **argv);
+int				*converter(char **argv, int *stack_len);
 #endif
