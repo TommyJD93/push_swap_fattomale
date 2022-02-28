@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 18:48:26 by tterribi          #+#    #+#             */
-/*   Updated: 2022/02/24 11:43:34 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/02/28 11:48:50 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (str);
 }
 
-static size_t	get_words(const char *s, char c)
+size_t	get_words(const char *s, char c)
 {
 	size_t	ret;
 
@@ -118,3 +118,25 @@ char	**ft_split(const char *s, char c)
 	ret[i] = 0;
 	return (ret);
 }
+/*
+int main(void)
+{
+	char *s = "suca cazzo figa";
+	char **m;
+	int i = 0;
+	int j;
+
+
+	m = ft_split(s, ' ');
+	while (m[i])
+	{
+		j = 0;
+		while (m[i][j] != '\0')
+		{
+			printf("%c", m[i][j]);
+			j++;
+		}
+		printf("\n");
+		i++;
+	}
+}*/

@@ -6,12 +6,12 @@
 /*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 10:48:02 by tterribi          #+#    #+#             */
-/*   Updated: 2022/02/24 11:40:26 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/02/28 11:54:14 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+/*
 int	main(int argc, char **argv)
 {
 	int	*stack_a;
@@ -37,3 +37,4 @@ int	main(int argc, char **argv)
 	}
 
 }
+*/
