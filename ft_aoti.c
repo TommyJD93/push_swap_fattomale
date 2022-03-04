@@ -6,13 +6,13 @@
 /*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 21:54:58 by tterribi          #+#    #+#             */
-/*   Updated: 2022/02/28 15:19:37 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/03/02 16:26:42 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-bool	is_in_strings(char c, char *str)
+bool	in_strings(char c, char *str)
 {
 	while (*str)
 	{
@@ -28,7 +28,7 @@ int	ft_atoi(const char *str)
 	int	sign;
 	int	result;
 
-	while (is_in_strings(*(char *) str, "\t\n\v\f\r "))
+	while (in_strings(*(char *) str, "\t\n\v\f\r "))
 		str++;
 	sign = 1;
 	if (*str == '-')

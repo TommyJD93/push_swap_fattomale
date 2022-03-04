@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 18:39:48 by tterribi          #+#    #+#             */
-/*   Updated: 2022/03/02 11:22:27 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/03/04 11:14:46 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,53 +41,36 @@ void	string_manager(int *arr, char *string)
 	int		index;
 	int		j;
 
-	int h = 0;
-
 	matrix = ft_split(string, ' ');
 	j = 0;
 	index = 0;
-	printf("----------------\n");
-	printf("runtime:\n");
 	while (matrix[j])
 	{
 		i = 0;
 		while (matrix[j][i])
 		{
-			// if (i > 0)
-			// 	arr[index] *= 10;
-			arr[index] += ft_atoi(matrix[j]);
-			printf("[%d]: %d\n", index, arr[index]);
+			arr[index] = ft_atoi(matrix[j]);
 			i++;
 		}
 		index++;
 		j++;
 	}
-	printf("----------------\n");
-	printf("quella merdaccia di dio: \n");
-	while (h < 6)
-	{
-		printf("arr[%d]: %d\n", h, arr[h]);
-		h++;
-	}
-
-	//return (index);
 }
 
 int	*converter(char **argv, int *stack_len)
 {
 	int	*arr;
 	int	i;
-	int mlen;
-
+	int	mlen;
 
 	*stack_len = stack_len_calc(argv);
 	arr = (int *)malloc(sizeof(int *) * *stack_len);
 	if (!arr)
 		return (0);
 	i = 0;
-	if (is_in_strings(' ', argv[1]))
+	if (in_strings(' ', argv[1]))
 	{
-		string_manager(arr, argv[i]);
+		string_manager(arr, argv[1]);
 	}
 	else
 	{
@@ -97,7 +80,7 @@ int	*converter(char **argv, int *stack_len)
 			i++;
 		}
 	}
-	arr[i] = '\0';
+	arr[*stack_len+1] = '\0';
 	return (arr);
 }
 
@@ -122,25 +105,27 @@ int	*converter(char **argv, int *stack_len)
 // 	}
 // }
 
-int	main(int argc, char **argv)
-{
-	int	*porcamadonna;
-	int	i = 0;
-	int *len;
+// int	main(int argc, char **argv)
+// {
+// 	int	*porcamadonna;
+// 	int	i = 0;
+// 	int *len;
 
-	len = (int*)malloc(sizeof(int*) * 1);
-	len[1] = '\0';
-	//write(1, "a\n", 2);
-	porcamadonna = converter(argv, len);
-//	write(1, "a\n", 2);
-	//printf("%d\n", diocane[0]);
-	printf("----------------\n");
-	printf("final output:\n");
-	while (i < *len)
-	{
-		printf("[%d]: %d\n", i, porcamadonna[i]);
-		i++;
-	}
-	// printf("main len: %d\n", *len);
-	// printf("f\n");
-}
+// 	printf("input check: %s\n", argv[1]);
+
+// 	len = (int*)malloc(sizeof(int*) * 1);
+// 	len[1] = '\0';
+// 	//write(1, "a\n", 2);
+// 	porcamadonna = converter(argv, len);
+// //	write(1, "a\n", 2);
+// 	//printf("%d\n", diocane[0]);
+// 	printf("----------------\n");
+// 	printf("final output:\n");
+// 	while (i < *len)
+// 	{
+// 		printf("[%d]: %d\n", i, porcamadonna[i]);
+// 		i++;
+// 	}
+// 	// printf("main len: %d\n", *len);
+// 	// printf("f\n");
+// }
