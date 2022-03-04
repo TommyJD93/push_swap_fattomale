@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   algortrithm.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/02 09:05:42 by tterribi          #+#    #+#             */
-/*   Updated: 2022/03/04 16:34:29 by tterribi         ###   ########.fr       */
+/*   Created: 2022/03/04 12:39:16 by tterribi          #+#    #+#             */
+/*   Updated: 2022/03/04 18:34:22 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-bool	input_checker(int argc, char **argv)
+void	sort_three()
+{
+
+}
+
+void	sort_five(int *stack_a, int *stack_b, int *len)
 {
 	int	i;
 
-	if (argc <= 1)
-		return (true);
 	i = 0;
-	if (argc > 2)
+	while (i < (len - 1))
 	{
-		while (argv[i])
+		if (stack_a[i] > (stack_a[i]+1))
 		{
-			if ((!in_strings(' ', argv[1]) && in_strings(' ', argv[i]))
-				|| (in_strings(' ', argv[1]) && !in_strings(' ', argv[i])))
-				return (true);
-			i++;
+			printf("suca");
+			return (0);
 		}
 	}
-	return (false);
+	return (0);
 }
 
-bool	call_checker(int *arr) //gotta change this shit to void once algo is done
+void	LIS()
 {
-	if (length(arr) == 6)
-		return (true);
-	return (false);
+	int	*lis;
+	int i;
 }
