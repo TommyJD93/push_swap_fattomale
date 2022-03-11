@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 10:48:02 by tterribi          #+#    #+#             */
-/*   Updated: 2022/03/04 16:33:47 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/03/10 13:40:49 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,9 @@ int	main(int argc, char **argv)
 	stack_b = (int *)malloc(sizeof(int) * len);
 	if (!stack_b)
 		return (0);
-
+	write(1, "a\n", 2);
+	lis_algo(stack_a, &len, stack_a[0]);
+	write(1, "b\n", 2);
 
 	// while (i < len)
 	// {

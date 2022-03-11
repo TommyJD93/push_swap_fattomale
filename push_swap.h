@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 10:42:16 by tterribi          #+#    #+#             */
-/*   Updated: 2022/03/04 18:36:01 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/03/10 13:37:30 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,22 @@ typedef struct s_stack
 	int				flag;
 }	t_stack;
 
+//utils
 int				length(int *arr);
-int	stack_len_calc(char **matrix);
+int				stack_len_calc(char **matrix);
+int				*allocator(int *len);
+bool			in_strings(char c, char *str);
+int				flag_manager(int *lis, int *len);
 
+// algotithm
+void			lis_algo(int *stack_a, int *len, int max);
+
+//helper functions
 char			**ft_split(const char *s, char c);
 size_t			get_words(const char *s, char c);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
-
 int				ft_atoi(const char *str);
-bool			in_strings(char c, char *str);
-
 bool			input_checker(int argc, char **argv);
-
 int				*converter(char **argv, int *stack_len);
 
 //moves

@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 12:39:16 by tterribi          #+#    #+#             */
-/*   Updated: 2022/03/04 18:34:22 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/03/10 13:41:09 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,34 @@ void	sort_five(int *stack_a, int *stack_b, int *len)
 	int	i;
 
 	i = 0;
-	while (i < (len - 1))
+	while (i < (*len - 1))
 	{
 		if (stack_a[i] > (stack_a[i]+1))
 		{
 			printf("suca");
-			return (0);
+			return ;
 		}
 	}
-	return (0);
+	return ;
 }
 
-void	LIS()
+void	lis_algo(int *stack_a, int *len, int min)
 {
 	int	*lis;
-	int i;
+	int	i;
+
+	lis = allocator(len);
+	i = 0;
+	while (i < *len)
+	{
+		if (stack_a[i] < min)
+			lis[i] += 1;
+		i++;
+	}
+	i = 0;
+	while (i < *len)
+	{
+		printf("[%d]: %d\n", i, lis[i]);
+		i++;
+	}
 }
