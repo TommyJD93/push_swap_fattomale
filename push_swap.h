@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 10:42:16 by tterribi          #+#    #+#             */
-/*   Updated: 2022/03/10 13:37:30 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/03/11 15:31:59 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int				length(int *arr);
 int				stack_len_calc(char **matrix);
 int				*allocator(int *len);
 bool			in_strings(char c, char *str);
-int				flag_manager(int *lis, int *len);
+void			flag_manager(int *lis, int *len);
 
 // algotithm
 void			lis_algo(int *stack_a, int *len, int max);

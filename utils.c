@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 18:16:13 by tterribi          #+#    #+#             */
-/*   Updated: 2022/03/11 08:23:54 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/03/11 15:31:42 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	*allocator(int *len)
 	return (arr);
 }
 
-void	*flag_manager(int *lis, int *len)
+void	flag_manager(int *lis, int *len)
 {
 	int	i;
 	int	max;
