@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 18:16:13 by tterribi          #+#    #+#             */
-/*   Updated: 2022/03/11 15:31:42 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/03/17 14:39:02 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	*allocator(int *len)
 	i = 0;
 	while (i < *len)
 	{
-		arr[i] = 0;
+		arr[i] = 1;
 		i++;
 	}
 	arr[*len + 1] = '\0';
@@ -44,7 +44,7 @@ void	flag_manager(int *lis, int *len)
 	int	i;
 	int	max;
 
-	i = 1;
+	i = 0;
 	max = 0;
 	while (i < *len)
 	{
@@ -58,7 +58,6 @@ void	flag_manager(int *lis, int *len)
 		lis[i] = 0;
 		i++;
 	}
-	i = 0;
 }
 
 //looks for the higher flag in the *lis array
