@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 10:42:16 by tterribi          #+#    #+#             */
-/*   Updated: 2022/03/17 15:07:16 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/03/17 17:40:54 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,9 @@ bool			in_strings(char c, char *str);
 void			flag_manager(int *lis, int *len);
 
 //algorithm
-int				*lis(int *stack_a, int *len);
+void			lis_caller(int *stack_a, int *stack_b, int *len);
+void			_lis(int *stack_a, int *len, int *lis);
+void			mv_to_b(int *stack_a, int *stack_b, int *len, int *lis);
 
 //algorithm utils
 int				hflag(int *lis, int*len);
