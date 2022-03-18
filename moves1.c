@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 11:27:29 by tterribi          #+#    #+#             */
-/*   Updated: 2022/02/24 11:39:26 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/03/18 08:35:36 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,31 +92,30 @@ int	*reverse_rotate_b(int *stack_b)
 	return (tmp);
 }
 
-/*
-int main(void)
-{
-	int *asd;
-	int *asd1;
-	int i = 0;
 
-	asd = (int*)malloc(sizeof(int*) * 4);
-	while (i < 9)
-	{
-		asd[i] = i+1;
-		//printf("[%d]: %d\n", i, asd[i]);
-		i++;
-	}
-	asd[i] = '\0';
-	//write(1, "a\n", 2);
-	asd1 = reverse_rotate_b(asd);
-	//write(1, "c\n", 2);
-	i = 0;
-//	write(1, "b\n", 2);
-	while (asd1[i])
-	{
-		//write(1, "c\n", 2);
-		printf("[%d]: %d\n", i, asd1[i]);
-		i++;
-	}
-}
-*/
+// int main(void)
+// {
+// 	int *asd;
+// 	int *asd1;
+// 	int i = 0;
+
+// 	asd = (int*)malloc(sizeof(int*) * 4);
+// 	while (i < 9)
+// 	{
+// 		asd[i] = i+1;
+// 		//printf("[%d]: %d\n", i, asd[i]);
+// 		i++;
+// 	}
+// 	asd[i] = '\0';
+// 	//write(1, "a\n", 2);
+// 	asd1 = rotate_a(asd);
+// 	//write(1, "c\n", 2);
+// 	i = 0;
+// //	write(1, "b\n", 2);
+// 	while (asd1[i])
+// 	{
+// 		//write(1, "c\n", 2);
+// 		printf("[%d]: %d\n", i, asd1[i]);
+// 		i++;
+// 	}
+// }

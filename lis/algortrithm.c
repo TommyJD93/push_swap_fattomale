@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algortrithm.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 12:39:16 by tterribi          #+#    #+#             */
-/*   Updated: 2022/03/17 17:41:20 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/03/18 08:19:34 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	_lis(int *stack_a, int *len, int *lis)
 			h++;
 		}
 		i++;
-	}	
+	}
 	flag_manager(lis, len);
 }
 
@@ -79,19 +79,21 @@ int main(int argc, char **argv)
 	int len;
 	int *output;
 	int i = 0;
-	
+
+
+
 	stack_a = converter(argv, &len);
 	stack_b = (int *)malloc(sizeof(int) * len);
 	if (!stack_b)
 		return (0);
-	printf("\033[0;32m");
-	printf("converted array\n\n");
-	printf("\033[0;36m");
-	while (i < len)
-	{
-		printf("[%d]: %d\n", i, stack_a[i]);
-		i++;
-	}
+	// printf("\033[0;32m");
+	// printf("converted array\n\n");
+	// printf("\033[0;36m");
+	// while (i < len)
+	// {
+	// 	printf("[%d]: %d\n", i, stack_a[i]);
+	// 	i++;
+	// }
 	i = 0;
 	lis_caller(stack_a, stack_b, &len);
 
